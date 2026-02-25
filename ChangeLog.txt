@@ -1,0 +1,31 @@
+# Changelog - LG MEN3 Activator
+
+## [1.0.0] - 2024-12-04
+### Initial Release
+- First version of activator for LG MEN3_EU_SK370_P3355L
+- Adapted from MST2 Activator v3.0 (Unbroken)
+- Support for JSON metadata format (.mnf files)
+- Integration with ScriptInstaller
+- Support for FEC codes via addFecs.txt
+- Automatic installation of network services (FTP, Telnet)
+- Update of passwd file for root access
+- Automatic script execution from SD card
+- Activation process logging
+
+### Features
+- FEC code activation
+- Enable debug interfaces
+- System user configuration
+- Automatic script execution from external media
+
+### Known Issues
+- Requires proper activation.sh.sig signature (current is a stub)
+- Some paths may require adaptation for specific system
+- FEC activation may require additional tools
+
+### Technical Details
+- Metadata format: JSON (.mnf)
+- Shell: /bin/sh
+- Checksums: SHA256
+- Signatures: separate .sig files
+

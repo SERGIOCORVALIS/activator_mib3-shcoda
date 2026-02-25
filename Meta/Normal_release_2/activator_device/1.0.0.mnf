@@ -1,0 +1,22 @@
+{
+    "Manifest": "1.0.0",
+    "PackageName": "activator_device",
+    "PackageType": "device",
+    "PackageVersion": "1.0.0",
+    "DeviceRelease": "0001",
+    "MainUnitDevice": true,
+    "DiagnosticAddress": "0X5F",
+    "DiagnosticVersion": "1800",
+    "Installer": [
+        {
+            "Type": "scriptinstaller"
+        }
+    ],
+    "Includes": [
+        {
+            "PackageName": "script.module",
+            "PackageVersion": "1.0.0"
+        }
+    ]
+}
+

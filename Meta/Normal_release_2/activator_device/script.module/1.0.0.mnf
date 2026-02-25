@@ -1,0 +1,17 @@
+{
+    "Manifest": "1.0.0",
+    "PackageName": "script.module",
+    "PackageVersion": "1.0.0",
+    "PackageType": "module",
+    "HWIndex": [
+        {
+            "Index": "0",
+            "ModuleVersion": "1.0.0",
+            "InstallerFile": "activator_device.script.module_20251204-1914/0/installer.txt",
+            "CheckSum": [
+                "3acb95d3808f5e236ae81ec0e410d56c74c50f5f764a0a56f9c49ad7c2aeb49a"
+            ],
+            "CheckSumSize": 524288
+        }
+    ]
+}

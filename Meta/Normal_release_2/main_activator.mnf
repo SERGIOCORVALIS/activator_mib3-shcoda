@@ -1,0 +1,31 @@
+{
+    "Manifest": "1.0.0",
+    "PackageName": "MEN3_EU_SK370_P3355L_ACTIVATOR",
+    "PackageType": "main",
+    "Release": "MEN3_EU_SK370_P3355L",
+    "SaveReleaseName": true,
+    "PackageVersion": "4.0.0",
+    "MUVersion": "1800",
+    "CustomerUpdate": false,
+    "TranquilizerTimeout": 75,
+    "Variant": [
+        "FM3-E2-*-*-SK-MQB-PA-*"
+    ],
+    "Includes": [
+        {
+            "PackageName": "activator_device",
+            "PackageVersion": "1.0.0"
+        }
+    ],
+    "UpdateOrder": [
+        {
+            "Type": "parallel",
+            "Devices": [
+                [
+                    "activator_device"
+                ]
+            ]
+        }
+    ]
+}
+

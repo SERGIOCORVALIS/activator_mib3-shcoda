@@ -1,0 +1,69 @@
+QUICK START - LG MEN3 ACTIVATOR
+===================================
+
+WHAT IS THIS:
+-------------
+Activator for firmware LG MEN3_EU_SK370_P3355L, based on MST2 Activator.
+Adapted for LG MEN3 JSON metadata format.
+
+QUICK INSTALLATION:
+------------------
+1. Copy LG_MEN3_Activator folder to SD/USB card
+2. Install as a regular software update
+3. Done!
+
+IMPORTANT:
+----------
+⚠️ The activation.sh.sig file contains a STUB!
+   A PROPER SIGNATURE is required for operation.
+   See SIGNATURE_INFO.txt
+
+STRUCTURE:
+----------
+LG_MEN3_Activator/
+├── Meta/              - Metadata (JSON .mnf files)
+├── Data/              - Scripts and data
+└── common/            - FEC codes
+
+MAIN FILES:
+-----------
+- ReadMe.txt              - Full documentation
+- INSTALLATION_GUIDE.md   - Detailed guide
+- STRUCTURE.txt           - Structure description
+- SIGNATURE_INFO.txt      - Signature information
+
+FEATURES:
+---------
+✓ FEC code activation
+✓ Enable network services (FTP, Telnet)
+✓ User configuration
+✓ Automatic script execution from SD card
+✓ Process logging
+
+FEC CODES:
+---------
+Create common/addFecs.txt on SD/USB with your FEC codes.
+If file is not present, default codes will be used.
+
+LOGS:
+-----
+After installation check:
+- /tmp/activator.log - main log
+- /tmp/activator_marker - activation marker
+- /opt/swup/fecs/activated_fecs.txt - activated FECs
+
+INTEGRATION:
+-----------
+For integration with original firmware see INSTALLATION_GUIDE.md
+Section "INTEGRATION WITH ORIGINAL FIRMWARE"
+
+SUPPORT:
+--------
+Version: 1.0.0
+Date: 2024-12-04
+Based on: MST2 Activator v3.0 (Unbroken)
+
+WARNING:
+--------
+Use at your own risk!
+Always create a backup before installation!

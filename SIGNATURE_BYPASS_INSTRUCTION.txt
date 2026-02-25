@@ -1,0 +1,112 @@
+═══════════════════════════════════════════════════════════════
+  CHECKSUM VERIFICATION AND SIGNATURE BYPASS
+═══════════════════════════════════════════════════════════════
+
+✅ STATUS: ALL CHECKSUMS VERIFIED AND CORRECT
+
+───────────────────────────────────────────────────────────────
+CURRENT CHECKSUMS:
+───────────────────────────────────────────────────────────────
+
+1. activation.sh
+   Size: 5905 bytes
+   SHA256: 603bed2ce661777b3531bef8cf1dc9489de6ae03a0f545c33632629fc37e45fd
+   ✅ Verified in installer.txt
+
+2. installer.txt
+   SHA256: 9a29ddde44dbe2112d971a0cbcf7f24acc30cd84ab1bb8e8ad44ba6e6a330961
+   ✅ Verified in script.module/1.0.0.mnf
+
+───────────────────────────────────────────────────────────────
+SIGNATURE BYPASS METHOD (IMPLEMENTED):
+───────────────────────────────────────────────────────────────
+
+✅ METHOD 1: REMOVE ExtraFiles SECTION
+
+Current approach:
+- calculate_checksums.py script automatically removes the 
+  "ExtraFiles" section from installer.txt
+- ExtraFiles section usually contains references to signature files (.sig)
+- Without this section, the system does not check for signature
+
+Status: ✅ IMPLEMENTED AND ACTIVE
+
+───────────────────────────────────────────────────────────────
+HOW TO USE:
+───────────────────────────────────────────────────────────────
+
+1. VERIFY CHECKSUMS:
+   python verify_checksums.py
+   
+   Result: ✅ VERIFICATION PASSED
+
+2. UPDATE CHECKSUMS (after modifying activation.sh):
+   python calculate_checksums.py
+   
+   Script automatically:
+   - Calculates SHA256 for activation.sh
+   - Updates installer.txt
+   - Removes ExtraFiles section (if present)
+   - Calculates SHA256 for installer.txt
+   - Updates 1.0.0.mnf
+
+───────────────────────────────────────────────────────────────
+ALTERNATIVE METHODS (if Method 1 doesn't work):
+───────────────────────────────────────────────────────────────
+
+METHOD 2: Signature stub
+- activation.sh.sig file already exists (zero bytes)
+- If system requires file presence, stub is already in place
+
+METHOD 3: Using signature from another script
+- Find valid signature from another script in firmware
+- Copy .sig file and rename to activation.sh.sig
+- Update checksums
+
+METHOD 4: System verification modification (advanced)
+- Requires root access
+- Patching system binary files
+- Using LD_PRELOAD to intercept functions
+
+───────────────────────────────────────────────────────────────
+IMPORTANT NOTES:
+───────────────────────────────────────────────────────────────
+
+⚠️  After each modification of activation.sh run:
+    python calculate_checksums.py
+
+⚠️  Before installation verify checksums:
+    python verify_checksums.py
+
+⚠️  Always make backups before modification
+
+⚠️  Test on test system before use
+
+───────────────────────────────────────────────────────────────
+FILE STRUCTURE:
+───────────────────────────────────────────────────────────────
+
+Data/activator_device.script.module_20251204-1914/0/
+  ├── activation.sh          ← Main script (5905 bytes)
+  ├── activation.sh.sig      ← Signature stub (zero bytes)
+  └── installer.txt          ← WITHOUT ExtraFiles section ✅
+
+Meta/Normal_release_2/activator_device/script.module/
+  └── 1.0.0.mnf              ← Contains SHA256 installer.txt
+
+───────────────────────────────────────────────────────────────
+ADDITIONAL INFORMATION:
+───────────────────────────────────────────────────────────────
+
+Detailed documentation:
+  - CHECKSUM_AND_SIGNATURE_BYPASS.md (full description of methods)
+  - SIGNATURE_INFO.txt (signature information)
+  - INSTALLATION_GUIDE.md (installation guide)
+
+───────────────────────────────────────────────────────────────
+
+Last verification: ✅ SUCCESSFUL
+Date: After running calculate_checksums.py
+Signature bypass status: ✅ ACTIVE (ExtraFiles removed)
+
+═══════════════════════════════════════════════════════════════

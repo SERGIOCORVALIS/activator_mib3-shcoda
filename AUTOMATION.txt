@@ -1,0 +1,144 @@
+═══════════════════════════════════════════════════════════════
+  FULL AUTOMATION LG MEN3 ACTIVATOR
+═══════════════════════════════════════════════════════════════
+
+✅ STATUS: FULLY AUTOMATED
+
+───────────────────────────────────────────────────────────────
+QUICK START:
+───────────────────────────────────────────────────────────────
+
+Windows:
+  Double-click: auto_build.bat
+  OR
+  python auto_build.py
+
+Linux/Mac:
+  ./auto_build.sh
+  OR
+  python3 auto_build.py
+
+───────────────────────────────────────────────────────────────
+WHAT AUTOMATION DOES:
+───────────────────────────────────────────────────────────────
+
+✅ Checks for all files
+✅ Creates backups (in .backups/ folder)
+✅ Calculates SHA256 for activation.sh
+✅ Updates installer.txt with new checksum
+✅ Removes ExtraFiles section (signature bypass)
+✅ Calculates SHA256 for installer.txt
+✅ Updates 1.0.0.mnf with new checksum
+✅ Verifies all checksums
+✅ Generates report
+
+───────────────────────────────────────────────────────────────
+OPERATION MODES:
+───────────────────────────────────────────────────────────────
+
+1. FULL AUTOMATION (default):
+   python auto_build.py
+   → Update + Verification
+
+2. UPDATE ONLY:
+   python auto_build.py --update
+   → Updates checksums
+
+3. VERIFY ONLY:
+   python auto_build.py --verify
+   → Verifies current checksums
+
+4. NO BACKUPS:
+   python auto_build.py --no-backup
+   → Does not create .bak files
+
+5. MINIMAL OUTPUT:
+   python auto_build.py --quiet
+   → Only critical information
+
+───────────────────────────────────────────────────────────────
+TYPICAL SCENARIOS:
+───────────────────────────────────────────────────────────────
+
+After modifying activation.sh:
+  python auto_build.py
+  → Automatically updates everything and verifies
+
+Before installation (verification):
+  python auto_build.py --verify
+  → Make sure everything is correct
+
+Quick update:
+  python auto_build.py --update --no-backup
+  → Without backups and verification
+
+───────────────────────────────────────────────────────────────
+BACKUPS:
+───────────────────────────────────────────────────────────────
+
+Automatically saved to: .backups/
+
+Format: filename.YYYYMMDD_HHMMSS.bak
+
+Example:
+  .backups/installer.txt.20251204_213528.bak
+  .backups/1.0.0.mnf.20251204_213528.bak
+
+───────────────────────────────────────────────────────────────
+AUTOMATICALLY VERIFIED:
+───────────────────────────────────────────────────────────────
+
+✅ All files present
+✅ SHA256 activation.sh in installer.txt
+✅ SHA256 installer.txt in 1.0.0.mnf
+✅ activation.sh file size
+✅ Absence of ExtraFiles section (signature bypass)
+
+───────────────────────────────────────────────────────────────
+RECOMMENDED WORKFLOW:
+───────────────────────────────────────────────────────────────
+
+1. Edit activation.sh
+2. Run: python auto_build.py
+3. Check output: Everything should be ✅
+4. Done! Package is ready for installation
+
+───────────────────────────────────────────────────────────────
+COMPARISON WITH OLD SCRIPTS:
+───────────────────────────────────────────────────────────────
+
+calculate_checksums.py  → Update only
+verify_checksums.py     → Verify only
+auto_build.py          → EVERYTHING AUTOMATICALLY! ✅
+
+───────────────────────────────────────────────────────────────
+REQUIREMENTS:
+───────────────────────────────────────────────────────────────
+
+- Python 3.6+
+- Python standard library
+
+Optional (for colored output):
+  pip install colorama
+
+───────────────────────────────────────────────────────────────
+TROUBLESHOOTING:
+───────────────────────────────────────────────────────────────
+
+Error "File not found":
+  → Run from project root folder
+
+Error "Permission denied" (Linux):
+  → chmod +x auto_build.sh
+
+No colored output:
+  → Install: pip install colorama
+  → Or use without colors (works)
+
+───────────────────────────────────────────────────────────────
+
+Version: 1.0.0
+Date: 2025-12-04
+Status: ✅ FULLY AUTOMATED
+
+═══════════════════════════════════════════════════════════════

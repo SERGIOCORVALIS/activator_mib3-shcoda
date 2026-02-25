@@ -1,0 +1,39 @@
+IMPORTANT SIGNATURE INFORMATION
+===============================
+
+CURRENT STATUS:
+---------------
+The activation.sh.sig file contains a STUB (zero bytes).
+A PROPER SIGNATURE is required for activator operation!
+
+SIGNATURE REQUIREMENTS:
+-----------------------
+- File size: 4096 bytes
+- Format: Depends on LG MEN3 signature system
+- Algorithm: Probably RSA or ECDSA
+- Key: Private key required for signing
+
+HOW TO OBTAIN SIGNATURE:
+-----------------------
+1. Study LG MEN3 signature system
+2. Find a way to generate signatures for ScriptInstaller
+3. Use the same method used for other scripts in firmware
+4. Replace activation.sh.sig with proper signature
+
+ALTERNATIVE METHODS:
+--------------------
+1. Use signature from existing script (if format is compatible)
+2. Study signature verification bypass mechanism (if exists)
+3. Use tools for working with LG MEN3 firmware
+
+IMPORTANT:
+----------
+Without proper signature, the activation.sh script WILL NOT BE EXECUTED by the system!
+Current stub is used only for file structure.
+
+SIGNATURE VERIFICATION:
+-----------------------
+After obtaining proper signature:
+1. Replace activation.sh.sig
+2. Update CheckSum in installer.txt (SHA256 hash of file)
+3. Update CheckSum in script.module/1.0.0.mnf

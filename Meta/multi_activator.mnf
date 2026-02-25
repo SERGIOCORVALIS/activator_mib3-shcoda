@@ -1,0 +1,13 @@
+{
+    "Manifest": "1.0.0",
+    "PackageName": "Multirelease_Activator",
+    "PackageType": "multirelease",
+    "PackageVersion": "4.0.0",
+    "Includes": [
+        {
+            "PackageName": "Normal_release_2/main_activator.mnf",
+            "DisplayName": "LG MEN3 Activator"
+        }
+    ]
+}
+

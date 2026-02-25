@@ -1,0 +1,80 @@
+LG MEN3 ACTIVATOR STRUCTURE
+=============================
+
+LG_MEN3_Activator/
+│
+├── Meta/                                    # Metadata
+│   ├── multi_activator.mnf                 # Main manifest (multi-release)
+│   └── Normal_release_2/
+│       ├── main_activator.mnf              # Main activator manifest
+│       └── activator_device/
+│           ├── 1.0.0.mnf                   # Device metadata
+│           └── script.module/
+│               └── 1.0.0.mnf               # Script module metadata
+│
+├── Data/                                    # Data
+│   └── activator_device.script.module_20251204-1914/
+│       └── 0/
+│           ├── activation.sh               # Main activation script
+│           ├── activation.sh.sig           # Script signature (PROPER ONE REQUIRED!)
+│           └── installer.txt               # Installer metadata
+│
+├── common/                                  # Common files
+│   └── addFecs.txt                         # List of FEC codes
+│
+├── ReadMe.txt                               # Main documentation
+├── ChangeLog.txt                            # Change history
+├── INSTALLATION_GUIDE.md                    # Installation guide
+├── SIGNATURE_INFO.txt                       # Signature information
+└── STRUCTURE.txt                            # This file
+
+FILE DESCRIPTIONS:
+------------------
+
+Meta/multi_activator.mnf
+  Main manifest that combines releases. Used for installing
+  activator as a separate package.
+
+Meta/Normal_release_2/main_activator.mnf
+  Main activator manifest. Contains package information,
+  firmware variants and installation order.
+
+Meta/Normal_release_2/activator_device/1.0.0.mnf
+  Activator device metadata. Defines device type
+  and installer used (ScriptInstaller).
+
+Meta/Normal_release_2/activator_device/script.module/1.0.0.mnf
+  Script module metadata. Contains script information,
+  checksums and path to installer.txt.
+
+Data/activator_device.script.module_*/0/activation.sh
+  Main activation script. Executed after package installation.
+  Contains all activation logic.
+
+Data/activator_device.script.module_*/0/activation.sh.sig
+  Signature of activation.sh script. PROPER SIGNATURE REQUIRED!
+  Current file is a stub.
+
+Data/activator_device.script.module_*/0/installer.txt
+  Metadata for ScriptInstaller. Contains script information,
+  its size, checksums and signatures.
+
+common/addFecs.txt
+  List of FEC codes for activation. One code per line.
+  If file is not found, default codes are used.
+
+INTEGRATION WITH ORIGINAL FIRMWARE:
+------------------------------------
+To integrate with original firmware MEN3_EU_SK370_P3355L:
+
+1. Copy Meta/Normal_release_2/activator_device/
+   to Meta/Normal_release_2/ of original firmware
+
+2. Copy Data/activator_device.script.module_*/
+   to Data/ of original firmware
+
+3. Add to original main.mnf:
+   - In "Includes": {"PackageName": "activator_device", "PackageVersion": "1.0.0"}
+   - In "UpdateOrder": add "activator_device" at the end
+
+4. Update checksums in installer.txt and .mnf files

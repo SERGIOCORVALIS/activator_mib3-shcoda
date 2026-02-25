@@ -1,0 +1,13 @@
+{
+    "Type": "script",
+    "Scripts": [
+        {
+            "Path": "activator_device.script.module_20251204-1914/0/activation.sh",
+            "Length": 11340,
+            "CheckSumSize": 524288,
+            "CheckSum": [
+                "7ba467c667a30f276b01c807f576f296c60844849cfea5b0e2a5bc668dc5bfd9"
+            ]
+        }
+    ]
+}
